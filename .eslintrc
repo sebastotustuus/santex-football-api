@@ -10,6 +10,8 @@
       "plugin:@typescript-eslint/recommended"
     ],
     "rules": { 
-      "no-console": "warn" // Remember, this means error!
+      "no-console": "warn",
+      "no-undef": "off",
+      "ban-types": "off"
     }
   }
