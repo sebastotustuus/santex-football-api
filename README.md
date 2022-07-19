@@ -41,6 +41,7 @@ Although it is a test project only and does not require any type of strict evolu
 - Axios
 - Apollo Server
 - Typescript
+- MongoDB as NoSQL Database
 
 ## Solution
 
@@ -80,6 +81,7 @@ Finally, it ends with a couple of manual tests to guarantee certain basic flows.
 2. Add Cache System (I could do it for the time)
 3. Variable renames according to DDD
 4. Implementes a CI/CD + IaaS
+5. Add loggers
 
 
 **Author:**
