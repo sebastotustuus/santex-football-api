@@ -82,7 +82,54 @@ Finally, it ends with a couple of manual tests to guarantee certain basic flows.
 3. Variable renames according to DDD
 4. Implementes a CI/CD + IaaS
 5. Add loggers
+5. Create docker compose for Production Environment
 
+## Steps to Run project
+
+### With Docker:
+1. Set env var in .env to docker compse can get it: MONGO_URI
+2. Use `docker compose build`in the root project to build the image
+3. Use `docker compose up -d`in the root project to run container
+
+### In Local Machine
+
+1. Verify Node version (+v14)
+2. Install dependencias `npm i`
+3. Run project in dev mode `npm run start:dev`
+4. Run project in production mode `npm run build` and `npm start`
+5. Execute linter `npm run lint`
+
+
+## GraphQL Endpoint
+
+    localhost:3000/graphql
+
+## GraphQL Queries Examples
+
+   
+### Import League
+```json
+mutation {
+	importLeague(leagueCode:"WC")  {
+		msg
+	}
+}
+```
+
+### Request data
+```json
+query  {
+	getLocalLeagues(leagueCode:  "WC"){
+		competition  {
+			name
+			code
+		}
+		teams  {
+			name
+		}
+	}
+}
+```
 
 **Author:**
 Sebastian Vallejo Rojas
