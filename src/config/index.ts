@@ -1,11 +1,17 @@
+import 'dotenv/config'
 export default {
   env: {
     MONGO_URI: process.env.MONGO_URI,
   },
   services: {
     footballApi: {
-      headerXAuthToken: process.env.X_AUTH_TOKEN,
-      competitions: "/v4/competitions",
+      baseUrl: "http://api.football-data.org",
+      competitions: "/v2/competitions",
+      teams: "/v2/teams",
+      headerXAuthToken: {
+        key: 'X-Auth-Token',
+        value: '5ba7ef83be88498f9bf9ff111624fa59'
+      },
     },
   },
 };

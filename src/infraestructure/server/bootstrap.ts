@@ -1,5 +1,5 @@
 import express from "express";
-import apolloServer from "../graphql/index";
+import apolloServer from "../apollo/index";
 
 import resolvers from "../../resolvers";
 import { PingResolver } from "../../resolvers/ping";

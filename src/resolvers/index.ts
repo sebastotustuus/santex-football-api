@@ -1,1 +1,1 @@
-export * as default from "./leagues/resolver"
+export * as default from "./football/resolver"
