@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "nodemon src/index.ts --exec ts-node",
+    "build": "tsc -p .",
+    "start": "NODE_PATH=./dist node build/index.js",
     "lint": "eslint ./src/** --ext .ts"
   },
   "repository": {

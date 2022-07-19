@@ -10,6 +10,7 @@ import {
 import FootballRepository from "./entities";
 import AxiosClient from "../../infraestructure/http/axios";
 import { ModelFootballLeague } from "../../domain/mongodb/league";
+import StoredCompetitions from "../../domain/football/competitions";
 
 @Service()
 export default class FootballRepo implements FootballRepository {
@@ -41,12 +42,13 @@ export default class FootballRepo implements FootballRepository {
     leagueCode: string,
     { competition, teams }: FootballApiResponse<Competition, Teams>
   ): Promise<string> {
-    const validateExistence = this.getOne(leagueCode);
-    if (!validateExistence) {
+    const validateExistence = await this.getOne<StoredCompetitions>(leagueCode);
+
+    if (validateExistence === null) {
       await this.leagueModel.create({ competition, teams });
-      return "Success Created"
+      return "Success Created";
     }
-    return "The resource is already in the store"
+    return "The resource is already in the store";
   }
 
   public async getOne<T>(leagueCode: string): Promise<T | null> {

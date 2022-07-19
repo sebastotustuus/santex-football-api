@@ -21,10 +21,10 @@ class FootballTeam {
   @prop({ required: true })
   name!: string;
 
-  @prop({ required: true })
+  @prop()
   tla!: string;
 
-  @prop({ required: true })
+  @prop()
   shortName!: string;
 
   @prop()

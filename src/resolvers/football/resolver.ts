@@ -18,7 +18,9 @@ export class LeagueResolver {
   ): Promise<string | ErrorMsgCommon> {
     try {
       const result = await this.leagueService.importLeague(leagueCode);
-      return result;
+      return {
+        msg: result,
+      };
     } catch (error: any) {
       return {
         msg: error?.message || "Server Error",
